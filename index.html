@@ -10,16 +10,45 @@
     crossorigin="anonymous"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Coda&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
+    <div id="nav-bar">
+      <h3 id="logo" class="white-text">Code Journal</h3>
+    </div>
   </header>
   <main>
     <div[data-view="entry-form"]>
-
+      <form id="journal-entry">
+        <h2>New Entry</h2>
+        <img src="images/placeholder-image-square.jpg">
+        <label for="title" >Title</label>
+        <input
+        required
+        id="title"
+        name="title"
+        type="text">
+        <label for="photoUrl">Photo URL</label>
+        <input
+        required
+        id="photUrl"
+        name="photoUrl"
+        type="text">
+        <label for="journalEntry">Notes</label>
+        <textarea
+        required
+        id="journalEntry"
+        name="journalEntry"
+        type="text"></textarea>
+      </form>
       </div>
   </main>
   <script src="js/data.js"></script>

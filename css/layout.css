@@ -4,8 +4,8 @@
 
 .container {
   max-width: 575px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  margin: 0 auto 1rem; /* was 0 auto */
+  padding: 0; /* was 1.5rem */
 }
 
 .row {
@@ -18,17 +18,35 @@
   width: 100%;
 }
 
+@media screen and (min-width: 575px) {
+  .column-full {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;
+    margin: 0 auto 1rem;
+    padding: 0;
   }
 
   .column-full,
   .column-half {
-    padding: 0 0.75rem;
+    padding: 0 0.75; /* was 0 0.75rem */
   }
 
   .column-half {
     width: 50%;
+  }
+
+  img {
+    width: 100%;
   }
 }

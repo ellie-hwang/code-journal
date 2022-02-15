@@ -10,15 +10,72 @@
     crossorigin="anonymous"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Coda&family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-  </header>
-  <main>
-  </main>
+  <div class="container">
+    <div class="row">
+      <div class="column-full">
+        <header>
+          <div id="nav-bar" class="accent-color">
+            <h3 id="logo" class="white-text padding-1">Code Journal</h3>
+          </div>
+        </header>
+      </div>
+    </div>
+
+    <main>
+      <div data-view="entry-form">
+        <form id="journal-entry">
+          <h2 class="pad-1-left-right">New Entry</h2>
+          <div class="row">
+            <div class="column-half pad-1-left-right">
+              <div class="img-container">
+                <img id="photo" src="images/placeholder-image-square.jpg" class="border-radius">
+              </div>
+            </div>
+
+            <div class="column-half pad-1-left-right">
+              <label for="title">Title</label>
+              <input
+              required
+              id="title"
+              name="title"
+              type="text"
+              class="border-radius">
+              <label for="photoUrl">Photo URL</label>
+              <input
+              required
+              id="photoUrl"
+              name="photoUrl"
+              type="text"
+              class="border-radius">
+            </div>
+
+            <div class="column-full pad-1-left-right">
+              <label for="notes">Notes</label>
+              <textarea
+              required
+              id="notes"
+              name="notes"
+              type="text"
+              rows="7"
+              class="border-radius"></textarea>
+              <div class="text-align-right pad-1-top">
+                <button id="save-button" type="submit" class="accent-color white-text border-radius">SAVE</button>
+              </div>
+            </div>
+            </form>
+          </div>
+    </main>
+  </div>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>

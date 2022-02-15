@@ -55,12 +55,12 @@ h3#logo {
   color: white;
 }
 
-.padding-1 {
+.pad-1-left-right {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.padding-1-top {
+.pad-1-top {
   padding-top: 1rem;
 }
 

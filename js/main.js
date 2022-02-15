@@ -13,6 +13,7 @@ var $journalEntry = document.querySelector('#journal-entry');
 
 $journalEntry.addEventListener('submit', createEntry);
 function createEntry(event) {
+  event.preventDefault();
   var entryObj = {};
   var title = $journalEntry.elements.title.value;
   var photoUrl = $journalEntry.elements.photoUrl.value;
@@ -23,8 +24,6 @@ function createEntry(event) {
   entryObj.nextEntryId = data.nextEntryId;
   data.nextEntryId++;
   data.entries.unshift(entryObj);
-  $photo.setAttribute('src', '');
-  title = '';
-  photoUrl = '';
-  notes = '';
+  $photo.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $journalEntry.reset();
 }

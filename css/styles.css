@@ -1,5 +1,6 @@
 body {
   font-family: Roboto, sans-serif;
+  background-color: rgb(243, 243, 243);
 }
 
 label,
@@ -17,10 +18,17 @@ label {
 input,
 textarea {
   padding: 0.5rem;
+  border: 2px solid rgb(167, 167, 167);
 }
 
 textarea {
   font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 3px solid rgb(33, 33, 141);
 }
 
 h3#logo {
@@ -32,6 +40,7 @@ h3#logo {
 
 #save-button {
   padding: 10px 15px;
+  border: none;
 }
 
 .border-radius {
@@ -39,7 +48,7 @@ h3#logo {
 }
 
 .accent-color {
-  background-color: rgb(41, 41, 112);
+  background-color: rgb(33, 33, 141);
 }
 
 .white-text {

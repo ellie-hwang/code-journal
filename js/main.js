@@ -21,7 +21,7 @@ function createEntry(event) {
   entryObj.title = title;
   entryObj.photoUrl = photoUrl;
   entryObj.notes = notes;
-  entryObj.nextEntryId = data.nextEntryId;
+  entryObj.entryId = data.nextEntryId;
   data.nextEntryId++;
   data.entries.unshift(entryObj);
   $photo.setAttribute('src', 'images/placeholder-image-square.jpg');

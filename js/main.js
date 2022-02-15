@@ -23,4 +23,5 @@ function createEntry(event) {
   entryObj.notes = notes;
   entryObj.nextEntryId = data.nextEntryId;
   data.nextEntryId++;
+  data.entries.unshift(entryObj);
 }

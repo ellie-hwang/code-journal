@@ -38,7 +38,7 @@
           <div class="row">
             <div class="column-half pad-1-left-right">
               <div class="img-container">
-                <img id="photo" src="images/placeholder-image-square.jpg" class="border-radius">
+                <img src="images/placeholder-image-square.jpg" class="entry-photo border-radius">
               </div>
             </div>
 
@@ -65,22 +65,36 @@
               required
               id="notes"
               name="notes"
-              type="text"
               rows="7"
               class="border-radius"></textarea>
               <div class="text-align-right pad-1-top">
                 <button id="save-button" type="submit" class="accent-color white-text border-radius">SAVE</button>
               </div>
             </div>
-            </form>
           </div>
+        </form>
+      </div>
 
-        <div data-view="entries">
-          <ul>
-            <li></li>
-            <li></li>
-          </ul>
+      <div data-view="entries">
+        <div class="row align-center space-between pad-1-left-right">
+          <h2>Entries</h2>
+          <button id="new-button" type="button" class="accent-color white-text border-radius">NEW</button>
         </div>
+        <ul class="display-flex">
+          <li class="column-half pad-1-left-right">
+            <div class="img-container">
+              <img src="https://images.immediate.co.uk/production/volatile/sites/23/2016/08/GettyImages-557059821-836aa91.jpg?quality=90&resize=620%2C413" class="entry-photo border-radius">
+            </div>
+          </li>
+          <li class="column-half pad-1-left-right">
+            <h3>Dummy Title</h3>
+            <p>As members of the weasel or mustelid family, southern sea otters are the smallest marine mammal. Like other members of
+            this family, they have very thick fur. In fact, at 850,000 to 1 million hairs per square inch, sea otters have the
+            thickest fur of any mammal.
+            </p>
+          </li>
+        </ul>
+      </div>
     </main>
   </div>
   <script src="js/data.js"></script>

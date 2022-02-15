@@ -31,6 +31,10 @@ textarea:focus {
   border: 3px solid rgb(33, 33, 141);
 }
 
+ul {
+  list-style-type: none;
+}
+
 h3#logo {
   font-family: Coda, cursive;
   font-size: 1rem;
@@ -39,6 +43,11 @@ h3#logo {
 }
 
 #save-button {
+  padding: 10px 15px;
+  border: none;
+}
+
+#new-button {
   padding: 10px 15px;
   border: none;
 }
@@ -66,4 +75,18 @@ h3#logo {
 
 .text-align-right {
   text-align: right;
+}
+
+.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
 }

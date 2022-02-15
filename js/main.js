@@ -2,7 +2,7 @@
 /* exported data */
 
 var $photoUrl = document.querySelector('input[name="photoUrl"]');
-var $photo = document.querySelector('#photo');
+var $photo = document.querySelector('.entry-photo');
 $photoUrl.addEventListener('input', updatePhotoPreview);
 
 function updatePhotoPreview(event) {

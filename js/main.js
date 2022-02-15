@@ -12,15 +12,15 @@ function updatePhotoPreview(event) {
 var $journalEntry = document.querySelector('#journal-entry');
 
 $journalEntry.addEventListener('submit', createEntry);
-// var nextEntryId = 0;
 function createEntry(event) {
   event.preventDefault();
   var entryObj = {};
   var title = $journalEntry.elements.title.value;
   var photoUrl = $journalEntry.elements.photoUrl.value;
-  var journalEntry = $journalEntry.elements.journalEntry.value;
+  var notes = $journalEntry.elements.notes.value;
   entryObj.title = title;
   entryObj.photoUrl = photoUrl;
-  entryObj.journalEntry = journalEntry;
-  // console.log('entryObj: ', entryObj);
+  entryObj.notes = notes;
+  entryObj.nextEntryId = data.nextEntryId;
+  data.nextEntryId++;
 }

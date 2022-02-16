@@ -4,8 +4,8 @@
 
 .container {
   max-width: 575px;
-  margin: 0 auto 1rem; /* was 0 auto */
-  padding: 0; /* was 1.5rem */
+  margin: 0 auto 1rem;
+  padding: 0;
 }
 
 .row {

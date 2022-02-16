@@ -35,21 +35,28 @@ function renderEntry(entryObj) {
   var divEl = document.createElement('div');
   var imgEl = document.createElement('img');
   var divEl2 = document.createElement('div');
+  var divEl3 = document.createElement('div');
   var h3El = document.createElement('h3');
+  var iconEl = document.createElement('i');
   var pEl = document.createElement('p');
 
-  liEl.className = 'display-flex';
+  liEl.className = 'display-flex space-between';
   divEl.className = 'column-half pad-1-bottom pad-1-right';
   imgEl.className = 'entry-photo border-radius';
   imgEl.setAttribute('src', entryObj.photoUrl);
   divEl2.className = 'column-half pad-1-3-bottom pad-1-left';
+  divEl3.className = 'row space-between';
+  h3El.className = 'title';
   h3El.textContent = entryObj.title;
+  iconEl.className = 'fa-solid fa-pen icon-color';
   pEl.textContent = entryObj.notes;
 
   liEl.appendChild(divEl);
   liEl.appendChild(divEl2);
   divEl.appendChild(imgEl);
-  divEl2.appendChild(h3El);
+  divEl3.appendChild(h3El);
+  divEl3.appendChild(iconEl);
+  divEl2.appendChild(divEl3);
   divEl2.appendChild(pEl);
 
   return liEl;

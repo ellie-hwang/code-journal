@@ -26,14 +26,14 @@
         <header>
           <div id="nav-bar" class="accent-color">
             <h3 id="logo" class="white-text padding-1">Code Journal</h3>
-            <a class="white-text" href="#">Entries</a>
+            <a id="nav-entries" class="white-text" href="#">Entries</a>
           </div>
         </header>
       </div>
     </div>
 
     <main>
-      <div data-view="entry-form">
+      <div id="entry-form" data-view="entry-form">
         <form id="journal-entry">
           <h2 class="pad-1-left-right">New Entry</h2>
           <div class="row">
@@ -76,7 +76,7 @@
         </form>
       </div>
 
-      <div id="entries" data-view="entries">
+      <div id="entries" data-view="entries" class="hidden">
         <div class="row align-center space-between pad-1-left-right">
           <h2>Entries</h2>
           <button id="new-button" type="button" class="accent-color white-text border-radius">NEW</button>

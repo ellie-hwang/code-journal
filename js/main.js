@@ -66,3 +66,21 @@ function displayEntries(event) {
     $viewEntries.appendChild($entries);
   }
 }
+
+var $entryForm = document.querySelector('div#entry-form');
+var $entries = document.querySelector('div#entries');
+var $container = document.querySelector('div.container');
+$container.addEventListener('click', swapView);
+
+function swapView(event) {
+  if (event.target.matches('#new-button')) {
+    $entries.className = 'hidden';
+    $entryForm.className = '';
+  } else if (event.target.matches('#save-button')) {
+    $entryForm.className = 'hidden';
+    $entries.className = '';
+  } else if (event.target.matches('#nav-entries')) {
+    $entryForm.className = 'hidden';
+    $entries.className = '';
+  }
+}

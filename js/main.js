@@ -114,6 +114,8 @@ function editEntry(event) {
   if (event.target.matches('I')) {
     $entryForm.className = '';
     $entriesView.className = 'hidden';
+    var $closestLi = event.target.closest('li');
+    var $dataEntryId = $closestLi.getAttribute('data-entry-id');
+    data.editing = data.entries[data.entries.length - $dataEntryId];
   }
-
 }

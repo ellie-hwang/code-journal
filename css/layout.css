@@ -39,7 +39,7 @@
 
   .column-full,
   .column-half {
-    padding: 0 0.75; /* was 0 0.75rem */
+    padding: 0 0.75;
   }
 
   .column-half {

@@ -41,6 +41,8 @@ function renderEntry(entryObj) {
   var pEl = document.createElement('p');
 
   liEl.className = 'display-flex space-between';
+  liEl.setAttribute('data-entry-id', entryObj.entryId);
+  // console.log(liEl.getAttribute('data-entry-id'));
   divEl.className = 'column-half pad-1-bottom pad-1-right';
   imgEl.className = 'entry-photo border-radius';
   imgEl.setAttribute('src', entryObj.photoUrl);

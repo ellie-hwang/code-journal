@@ -117,5 +117,9 @@ function editEntry(event) {
     var $closestLi = event.target.closest('li');
     var $dataEntryId = $closestLi.getAttribute('data-entry-id');
     data.editing = data.entries[data.entries.length - $dataEntryId];
+    $journalEntry.elements.title.value = data.editing.title;
+    $journalEntry.elements.photoUrl.value = data.editing.photoUrl;
+    $journalEntry.elements.notes.value = data.editing.notes;
+    $photo.setAttribute('src', data.editing.photoUrl);
   }
 }

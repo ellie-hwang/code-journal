@@ -76,10 +76,25 @@ function swapView(event) {
   if (event.target.matches('#new-button')) {
     $entriesView.className = 'hidden';
     $entryForm.className = '';
+    data.view = 'entry-form';
   } else if (event.target.matches('#save-button')) {
     $entryForm.className = 'hidden';
     $entriesView.className = '';
+    data.view = 'entries';
   } else if (event.target.matches('#nav-entries')) {
+    $entryForm.className = 'hidden';
+    $entriesView.className = '';
+    data.view = 'entries';
+  }
+}
+
+window.addEventListener('DOMContentLoaded', showSameView);
+
+function showSameView(event) {
+  if (data.view === 'entry-form') {
+    $entryForm.className = '';
+    $entriesView.className = 'hidden';
+  } else if (data.view === 'entries') {
     $entryForm.className = 'hidden';
     $entriesView.className = '';
   }

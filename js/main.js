@@ -106,3 +106,13 @@ function showSameView(event) {
     $entriesView.className = '';
   }
 }
+
+$entryList.addEventListener('click', editEntry);
+// var $icons = document.querySelectorAll('i');
+
+function editEntry(event) {
+  // if (target.event.matches('I')) {
+  //   console.log(target.event.tagName);
+  // }
+
+}

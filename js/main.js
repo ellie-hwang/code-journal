@@ -16,18 +16,35 @@ $journalEntry.addEventListener('submit', createEntry);
 function createEntry(event) {
   event.preventDefault();
   var entryObj = {};
-  var title = $journalEntry.elements.title.value;
-  var photoUrl = $journalEntry.elements.photoUrl.value;
-  var notes = $journalEntry.elements.notes.value;
-  entryObj.title = title;
-  entryObj.photoUrl = photoUrl;
-  entryObj.notes = notes;
-  entryObj.entryId = data.nextEntryId;
-  data.nextEntryId++;
-  data.entries.unshift(entryObj);
-  $photo.setAttribute('src', 'images/placeholder-image-square.jpg');
-  $entryList.prepend(renderEntry(entryObj));
-  $journalEntry.reset();
+  var title = '';
+  var photoUrl = '';
+  var notes = '';
+  if (data.editing === null) {
+    // var entryObj = {};
+    title = $journalEntry.elements.title.value;
+    photoUrl = $journalEntry.elements.photoUrl.value;
+    notes = $journalEntry.elements.notes.value;
+    entryObj.title = title;
+    entryObj.photoUrl = photoUrl;
+    entryObj.notes = notes;
+    entryObj.entryId = data.nextEntryId;
+    data.nextEntryId++;
+    data.entries.unshift(entryObj);
+    $photo.setAttribute('src', 'images/placeholder-image-square.jpg');
+    $entryList.prepend(renderEntry(entryObj));
+    $journalEntry.reset();
+  } else if (data.editing !== null) {
+    title = $journalEntry.elements.title.value;
+    photoUrl = $journalEntry.elements.photoUrl.value;
+    notes = $journalEntry.elements.notes.value;
+    entryObj.title = title;
+    entryObj.photoUrl = photoUrl;
+    entryObj.notes = notes;
+    entryObj.entryId = data.editing.entryId;
+    data.entries[data.entries.length - data.editing.entryId] = entryObj;
+    $photo.setAttribute('src', 'images/placeholder-image-square.jpg');
+    $journalEntry.reset();
+  }
 }
 
 function renderEntry(entryObj) {
@@ -108,7 +125,6 @@ function showSameView(event) {
 }
 
 $entryList.addEventListener('click', editEntry);
-// var $icons = document.querySelectorAll('i');
 
 function editEntry(event) {
   if (event.target.matches('I')) {

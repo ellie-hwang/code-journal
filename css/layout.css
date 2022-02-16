@@ -4,8 +4,8 @@
 
 .container {
   max-width: 575px;
-  margin: 0 auto 1rem; /* was 0 auto */
-  padding: 0; /* was 1.5rem */
+  margin: 0 auto 1rem;
+  padding: 0;
 }
 
 .row {
@@ -23,7 +23,7 @@
     width: 100%;
   }
 
-  img {
+  .entry-photo {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -39,14 +39,24 @@
 
   .column-full,
   .column-half {
-    padding: 0 0.75; /* was 0 0.75rem */
+    padding: 0 0.75;
   }
 
   .column-half {
     width: 50%;
   }
 
-  img {
+  .entry-photo {
     width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .pad-1-left {
+    padding-left: 1rem;
+  }
+
+  .pad-1-right {
+    padding-right: 1rem;
   }
 }

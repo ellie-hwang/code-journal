@@ -26,19 +26,20 @@
         <header>
           <div id="nav-bar" class="accent-color">
             <h3 id="logo" class="white-text padding-1">Code Journal</h3>
+            <a id="nav-entries" class="white-text" href="#">Entries</a>
           </div>
         </header>
       </div>
     </div>
 
     <main>
-      <div data-view="entry-form">
+      <div id="entry-form" data-view="entry-form">
         <form id="journal-entry">
           <h2 class="pad-1-left-right">New Entry</h2>
           <div class="row">
             <div class="column-half pad-1-left-right">
               <div class="img-container">
-                <img id="photo" src="images/placeholder-image-square.jpg" class="border-radius">
+                <img src="images/placeholder-image-square.jpg" class="entry-photo border-radius">
               </div>
             </div>
 
@@ -65,15 +66,25 @@
               required
               id="notes"
               name="notes"
-              type="text"
               rows="7"
               class="border-radius"></textarea>
               <div class="text-align-right pad-1-top">
                 <button id="save-button" type="submit" class="accent-color white-text border-radius">SAVE</button>
               </div>
             </div>
-            </form>
           </div>
+        </form>
+      </div>
+
+      <div id="entries-view" data-view="entries" class="hidden">
+        <div class="row align-center space-between pad-1-left-right">
+          <h2>Entries</h2>
+          <button id="new-button" type="button" class="accent-color white-text border-radius">NEW</button>
+        </div>
+        <ul id="entry-list" class="pad-1-left-right">
+
+        </ul>
+      </div>
     </main>
   </div>
   <script src="js/data.js"></script>

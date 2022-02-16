@@ -51,4 +51,12 @@
     height: 400px;
     object-fit: cover;
   }
+
+  .pad-1-left {
+    padding-left: 1rem;
+  }
+
+  .pad-1-right {
+    padding-right: 1rem;
+  }
 }

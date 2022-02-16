@@ -31,33 +31,31 @@ function createEntry(event) {
 }
 
 function renderEntry(entryObj) {
-  var ulEl = document.createElement('ul');
   var liEl = document.createElement('li');
   var divEl = document.createElement('div');
   var imgEl = document.createElement('img');
-  var liEl2 = document.createElement('li');
+  var divEl2 = document.createElement('div');
   var h3El = document.createElement('h3');
   var pEl = document.createElement('p');
 
-  ulEl.className = 'display-flex';
-  liEl.className = 'column-half pad-1-left-right pad-1-3-bottom';
+  liEl.className = 'display-flex';
+  divEl.className = 'column-half pad-1-bottom pad-1-right';
   imgEl.className = 'entry-photo border-radius';
   imgEl.setAttribute('src', entryObj.photoUrl);
-  liEl2.className = 'column-half pad-1-left-right pad-1-3-bottom';
+  divEl2.className = 'column-half pad-1-3-bottom pad-1-left';
   h3El.textContent = entryObj.title;
   pEl.textContent = entryObj.notes;
 
-  ulEl.appendChild(liEl);
-  ulEl.appendChild(liEl2);
   liEl.appendChild(divEl);
+  liEl.appendChild(divEl2);
   divEl.appendChild(imgEl);
-  liEl2.appendChild(h3El);
-  liEl2.appendChild(pEl);
+  divEl2.appendChild(h3El);
+  divEl2.appendChild(pEl);
 
-  return ulEl;
+  return liEl;
 }
 
-var $entryList = document.querySelector('div#entry-list');
+var $entryList = document.querySelector('ul#entry-list');
 window.addEventListener('DOMContentLoaded', displayEntries);
 
 function displayEntries(event) {

@@ -31,28 +31,33 @@ function createEntry(event) {
 }
 
 function renderEntry(entryObj) {
+  var ulEl = document.createElement('ul');
   var liEl = document.createElement('li');
   var divEl = document.createElement('div');
   var imgEl = document.createElement('img');
+  var liEl2 = document.createElement('li');
   var h3El = document.createElement('h3');
   var pEl = document.createElement('p');
 
-  liEl.className = 'column-half pad-1-left-right pad-1-bottom';
-  divEl.className = 'img-container';
+  ulEl.className = 'display-flex';
+  liEl.className = 'column-half pad-1-left-right pad-1-3-bottom';
   imgEl.className = 'entry-photo border-radius';
   imgEl.setAttribute('src', entryObj.photoUrl);
+  liEl2.className = 'column-half pad-1-left-right pad-1-3-bottom';
   h3El.textContent = entryObj.title;
   pEl.textContent = entryObj.notes;
 
+  ulEl.appendChild(liEl);
+  ulEl.appendChild(liEl2);
   liEl.appendChild(divEl);
   divEl.appendChild(imgEl);
-  liEl.appendChild(h3El);
-  liEl.appendChild(pEl);
+  liEl2.appendChild(h3El);
+  liEl2.appendChild(pEl);
 
-  return liEl;
+  return ulEl;
 }
 
-var $entryList = document.querySelector('ul#entry-list');
+var $entryList = document.querySelector('div#entry-list');
 window.addEventListener('DOMContentLoaded', displayEntries);
 
 function displayEntries(event) {
@@ -63,19 +68,19 @@ function displayEntries(event) {
 }
 
 var $entryForm = document.querySelector('div#entry-form');
-var $entries = document.querySelector('div#entries');
+var $entriesView = document.querySelector('div#entries-view');
 var $container = document.querySelector('div.container');
 $container.addEventListener('click', swapView);
 
 function swapView(event) {
   if (event.target.matches('#new-button')) {
-    $entries.className = 'hidden';
+    $entriesView.className = 'hidden';
     $entryForm.className = '';
   } else if (event.target.matches('#save-button')) {
     $entryForm.className = 'hidden';
-    $entries.className = '';
+    $entriesView.className = '';
   } else if (event.target.matches('#nav-entries')) {
     $entryForm.className = 'hidden';
-    $entries.className = '';
+    $entriesView.className = '';
   }
 }

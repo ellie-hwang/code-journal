@@ -111,8 +111,9 @@ $entryList.addEventListener('click', editEntry);
 // var $icons = document.querySelectorAll('i');
 
 function editEntry(event) {
-  // if (target.event.matches('I')) {
-  //   console.log(target.event.tagName);
-  // }
+  if (event.target.matches('I')) {
+    $entryForm.className = '';
+    $entriesView.className = 'hidden';
+  }
 
 }

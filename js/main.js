@@ -106,6 +106,8 @@ function swapView(event) {
     $entryForm.className = '';
     data.view = 'entry-form';
     data.editing = null;
+    $photo.setAttribute('src', 'images/placeholder-image-square.jpg');
+    $journalEntry.reset();
   } else if (event.target.matches('#save-button')) {
     $entryForm.className = 'hidden';
     $entriesView.className = '';

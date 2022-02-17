@@ -20,7 +20,6 @@ function createEntry(event) {
   var photoUrl = '';
   var notes = '';
   if (data.editing === null) {
-    // var entryObj = {};
     title = $journalEntry.elements.title.value;
     photoUrl = $journalEntry.elements.photoUrl.value;
     notes = $journalEntry.elements.notes.value;
@@ -43,6 +42,7 @@ function createEntry(event) {
     entryObj.entryId = data.editing.entryId;
     data.entries[data.entries.length - data.editing.entryId] = entryObj;
     $photo.setAttribute('src', 'images/placeholder-image-square.jpg');
+    $closestLi.replaceWith(renderEntry(entryObj));
     $journalEntry.reset();
   }
 }
@@ -125,12 +125,13 @@ function showSameView(event) {
 }
 
 $entryList.addEventListener('click', editEntry);
+var $closestLi = null;
 
 function editEntry(event) {
   if (event.target.matches('I')) {
     $entryForm.className = '';
     $entriesView.className = 'hidden';
-    var $closestLi = event.target.closest('li');
+    $closestLi = event.target.closest('li');
     var $dataEntryId = $closestLi.getAttribute('data-entry-id');
     data.editing = data.entries[data.entries.length - $dataEntryId];
     $journalEntry.elements.title.value = data.editing.title;

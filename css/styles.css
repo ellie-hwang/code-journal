@@ -62,11 +62,20 @@ h3#logo {
 #save-button {
   padding: 10px 15px;
   border: none;
+  display: inline-block;
 }
 
 #new-button {
   padding: 10px 15px;
   border: none;
+}
+
+#delete-button {
+  padding: 0;
+  border: none;
+  color: red;
+  text-decoration: underline;
+  display: inline-block;
 }
 
 .border-radius {
@@ -118,4 +127,8 @@ h3#logo {
 
 .icon-color {
   color: rgb(33, 33, 141);
+}
+
+.visibility-hidden {
+  visibility: hidden;
 }

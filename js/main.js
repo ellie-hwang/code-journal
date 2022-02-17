@@ -153,3 +153,14 @@ function editEntry(event) {
     $photo.setAttribute('src', data.editing.photoUrl);
   }
 }
+
+$entriesView.addEventListener('click', deleteEntry);
+var $deleteButton = document.querySelector('#delete-button');
+
+function deleteEntry(event) {
+  if (event.target.matches('I')) {
+    $deleteButton.className = '';
+  } else {
+    $deleteButton.className = 'visibility-hidden';
+  }
+}

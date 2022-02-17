@@ -40,7 +40,12 @@ function createEntry(event) {
     entryObj.photoUrl = photoUrl;
     entryObj.notes = notes;
     entryObj.entryId = data.editing.entryId;
-    data.entries[data.entries.length - data.editing.entryId] = entryObj;
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === entryObj.entryId) {
+        data.entries[i] = entryObj;
+      }
+    }
+    data.editing = null;
     $photo.setAttribute('src', 'images/placeholder-image-square.jpg');
     $closestLi.replaceWith(renderEntry(entryObj));
     $journalEntry.reset();
@@ -100,6 +105,7 @@ function swapView(event) {
     $entriesView.className = 'hidden';
     $entryForm.className = '';
     data.view = 'entry-form';
+    data.editing = null;
   } else if (event.target.matches('#save-button')) {
     $entryForm.className = 'hidden';
     $entriesView.className = '';
@@ -108,6 +114,7 @@ function swapView(event) {
     $entryForm.className = 'hidden';
     $entriesView.className = '';
     data.view = 'entries';
+    data.editing = null;
   }
 }
 
@@ -132,7 +139,12 @@ function editEntry(event) {
     $entriesView.className = 'hidden';
     $closestLi = event.target.closest('li');
     var $dataEntryId = $closestLi.getAttribute('data-entry-id');
-    data.editing = data.entries[data.entries.length - $dataEntryId];
+    $dataEntryId = JSON.parse($dataEntryId);
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === $dataEntryId) {
+        data.editing = data.entries[i];
+      }
+    }
     $journalEntry.elements.title.value = data.editing.title;
     $journalEntry.elements.photoUrl.value = data.editing.photoUrl;
     $journalEntry.elements.notes.value = data.editing.notes;

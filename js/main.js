@@ -164,3 +164,9 @@ function deleteEntry(event) {
     $deleteButton.className = 'visibility-hidden';
   }
 }
+
+$deleteButton.addEventListener('click', showDialogueBox);
+
+function showDialogueBox(event) {
+
+}

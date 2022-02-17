@@ -73,9 +73,25 @@ h3#logo {
 #delete-button {
   padding: 0;
   border: none;
-  color: red;
+  color: rgb(199, 0, 0);
   text-decoration: underline;
   display: inline-block;
+}
+
+#cancel-button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: rgb(199, 199, 199);
+  border: none;
+  font-weight: 700;
+}
+
+#confirm-button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: rgb(199, 0, 0);
+  border: none;
+  font-weight: 700;
 }
 
 .border-radius {
@@ -111,6 +127,10 @@ h3#logo {
   text-align: right;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
 .display-flex {
   display: flex;
   flex-wrap: wrap;
@@ -119,6 +139,10 @@ h3#logo {
 
 .align-center {
   align-items: center;
+}
+
+.align-content-center {
+  align-content: center;
 }
 
 .space-between {
@@ -131,4 +155,27 @@ h3#logo {
 
 .visibility-hidden {
   visibility: hidden;
+}
+
+.black-bg {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.dialogue-box {
+  background-color: white;
+  width: 425px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dialogue-box-text {
+  font-size: 1rem;
 }

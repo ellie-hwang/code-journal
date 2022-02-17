@@ -41,8 +41,14 @@ a {
   font-size: 1rem;
 }
 
-h3 {
+h3.title {
   margin-top: 0;
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+i {
+  display: inline-block;
 }
 
 h3#logo {
@@ -108,4 +114,8 @@ h3#logo {
 
 .space-between {
   justify-content: space-between;
+}
+
+.icon-color {
+  color: rgb(33, 33, 141);
 }

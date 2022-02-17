@@ -154,10 +154,10 @@ function editEntry(event) {
   }
 }
 
-$entriesView.addEventListener('click', deleteEntry);
+$entriesView.addEventListener('click', deleteEntryOption);
 var $deleteButton = document.querySelector('#delete-button');
 
-function deleteEntry(event) {
+function deleteEntryOption(event) {
   if (event.target.matches('I')) {
     $deleteButton.className = '';
   } else {
@@ -176,5 +176,29 @@ var $cancelButton = document.querySelector('#cancel-button');
 $cancelButton.addEventListener('click', hideModal);
 
 function hideModal(event) {
+  $modal.className = 'black-bg hidden';
+}
+
+var $confirmButton = document.querySelector('#confirm-button');
+$confirmButton.addEventListener('click', deleteEntry);
+
+function deleteEntry(event) {
+  var $entryDelete = 0;
+  for (let i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === data.editing.entryId) {
+      $entryDelete = i;
+    }
+  }
+  data.entries.splice($entryDelete, 1);
+  var $liElementList = document.querySelectorAll('li');
+  for (let i = 0; i < $liElementList.length; i++) {
+    if (JSON.parse($liElementList[i].getAttribute('data-entry-id')) === data.editing.entryId) {
+      $liElementList[i].remove();
+    }
+  }
+  data.editing = null;
+  $entryForm.className = 'hidden';
+  $entriesView.className = '';
+  data.view = 'entries';
   $modal.className = 'black-bg hidden';
 }

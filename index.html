@@ -23,6 +23,17 @@
   <div class="container">
     <div class="row">
       <div class="column-full">
+        <div id="modal" class="black-bg hidden">
+          <div class="dialogue-box border-radius text-align-center pad-1-left-right">
+            <h5 class="dialogue-box-text pad-1-top">Are you sure you want to delete this entry?</h5>
+            <div class="row space-between pad-1-left-right">
+              <button id="cancel-button" class="border-radius">CANCEL</button>
+              <button id="confirm-button" class="white-text border-radius">CONFIRM</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column-full">
         <header>
           <div id="nav-bar" class="accent-color">
             <h3 id="logo" class="white-text padding-1">Code Journal</h3>
@@ -68,10 +79,11 @@
               name="notes"
               rows="7"
               class="border-radius"></textarea>
-              <div class="text-align-right pad-1-top">
-                <button id="save-button" type="submit" class="accent-color white-text border-radius">SAVE</button>
-              </div>
             </div>
+          </div>
+          <div class="row space-between pad-1-left-right pad-1-top">
+            <button id="delete-button" type="button" class="visibility-hidden">Delete Entry</button>
+            <button id="save-button" type="submit" class="accent-color white-text border-radius">SAVE</button>
           </div>
         </form>
       </div>

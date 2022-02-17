@@ -166,7 +166,15 @@ function deleteEntry(event) {
 }
 
 $deleteButton.addEventListener('click', showDialogueBox);
+var $modal = document.querySelector('#modal');
 
 function showDialogueBox(event) {
+  $modal.className = 'black-bg';
+}
 
+var $cancelButton = document.querySelector('#cancel-button');
+$cancelButton.addEventListener('click', hideModal);
+
+function hideModal(event) {
+  $modal.className = 'black-bg hidden';
 }

@@ -52,6 +52,10 @@ h3.title {
   display: inline-block;
 }
 
+h2#entry-form-heading {
+  padding-left: 0;
+}
+
 i {
   display: inline-block;
 }

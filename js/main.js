@@ -13,6 +13,8 @@ var $journalEntry = document.querySelector('#journal-entry');
 
 $journalEntry.addEventListener('submit', createEntry);
 
+var $entryFormHeading = document.querySelector('h2#entry-form-heading');
+
 function createEntry(event) {
   event.preventDefault();
   var entryObj = {};
@@ -97,8 +99,10 @@ function displayEntries(event) {
 
 var $entryForm = document.querySelector('div#entry-form');
 var $entriesView = document.querySelector('div#entries-view');
-var $container = document.querySelector('div.container');
-$container.addEventListener('click', swapView);
+var $viewContainer = document.querySelector('div#view-container');
+$viewContainer.addEventListener('click', swapView);
+var $navBarDiv = document.querySelector('div#nav-bar');
+$navBarDiv.addEventListener('click', swapViewEntries);
 
 function swapView(event) {
   if (event.target.matches('#new-button')) {
@@ -112,7 +116,12 @@ function swapView(event) {
     $entryForm.className = 'hidden';
     $entriesView.className = '';
     data.view = 'entries';
-  } else if (event.target.matches('#nav-entries')) {
+  }
+}
+
+function swapViewEntries(event) {
+  if (event.target.matches('#nav-entries')) {
+    $entryFormHeading.textContent = 'New Entry';
     $entryForm.className = 'hidden';
     $entriesView.className = '';
     data.view = 'entries';
@@ -137,6 +146,7 @@ var $closestLi = null;
 
 function editEntry(event) {
   if (event.target.matches('I')) {
+    $entryFormHeading.textContent = 'Edit Entry';
     $entryForm.className = '';
     $entriesView.className = 'hidden';
     $closestLi = event.target.closest('li');

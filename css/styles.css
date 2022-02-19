@@ -3,6 +3,10 @@ body {
   background-color: rgb(243, 243, 243);
 }
 
+header {
+  background-color: rgb(33, 33, 141);
+}
+
 label,
 input,
 textarea {
@@ -39,6 +43,7 @@ ul {
 a {
   text-decoration: none;
   font-size: 1rem;
+  padding-left: 1.5rem;
 }
 
 h3.title {
@@ -54,7 +59,7 @@ i {
 h3#logo {
   font-family: Coda, cursive;
   font-size: 1.2rem;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 0;
   margin: 0;
   display: inline-block;
 }
@@ -68,6 +73,7 @@ h3#logo {
 #new-button {
   padding: 10px 15px;
   border: none;
+  display: inline-block;
 }
 
 #delete-button {
@@ -104,6 +110,10 @@ h3#logo {
 
 .white-text {
   color: white;
+}
+
+.margin-top-0 {
+  margin-top: 0;
 }
 
 .pad-1-left-right {
